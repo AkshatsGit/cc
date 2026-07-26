@@ -2,48 +2,52 @@
 
 @layer base {
   :root {
-    --primary: #6C63FF;
-    --primary-hover: #5A52E0;
-    --primary-light: #EEECFF;
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --primary-light: #EEF2FF;
   }
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: #F8FAFC;
   color: #0F172A;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .dark body {
-  background-color: #0B0F19;
-  color: #F1F5F9;
+  background-color: #0F172A;
+  color: #F8FAFC;
 }
 
-/* Custom rounded 16px cards */
+/* Crisp human-crafted 12px/16px cards */
 .card-creator {
   border-radius: 16px;
-  background: white;
+  background-color: #FFFFFF;
   border: 1px solid #E2E8F0;
-  box-shadow: 0 4px 20px -2px rgba(108, 99, 255, 0.05);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .dark .card-creator {
-  background: #111827;
-  border-color: #1F2937;
-  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.4);
+  background-color: #1E293B;
+  border-color: #334155;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
 .card-creator:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -4px rgba(108, 99, 255, 0.12);
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
 }
 
-/* Custom scrollbar */
+.dark .card-creator:hover {
+  border-color: #475569;
+}
+
+/* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -54,15 +58,4 @@ body {
 }
 .dark ::-webkit-scrollbar-thumb {
   background: #334155;
-}
-
-/* Gradient accents */
-.bg-gradient-purple {
-  background: linear-gradient(135deg, #6C63FF 0%, #8B5CF6 100%);
-}
-
-.text-gradient-purple {
-  background: linear-gradient(135deg, #6C63FF 0%, #A855F7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }

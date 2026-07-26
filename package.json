@@ -1,14 +1,13 @@
 {
-  "name": "creatorcart-root",
+  "name": "creatorcart",
   "version": "1.0.0",
-  "description": "Creator Cart - Modern Full-Stack Influencer Marketing SaaS Platform",
+  "description": "CreatorCart - College Project Collab Marketplace for Gen Z Brands & Influencers",
   "scripts": {
-    "install:all": "npm install --prefix server && npm install --prefix client",
-    "server": "npm run start --prefix server",
-    "client": "npm run dev --prefix client",
-    "build": "npm run build --prefix client"
+    "dev": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "preview": "npm run preview --prefix client"
   },
-  "keywords": ["influencer-marketing", "react", "express", "firebase", "tailwind-css"],
-  "author": "Creator Cart Team",
+  "keywords": ["react", "vite", "firebase", "tailwind-css", "college-project"],
+  "author": "CreatorCart Team",
   "license": "MIT"
 }
