@@ -14,8 +14,7 @@ import {
   ArrowRight,
   TrendingUp,
   Eye,
-  Trash2,
-  Edit3
+  Trash2
 } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import toast from 'react-hot-toast';
@@ -84,63 +83,63 @@ export default function BrandDashboard() {
         {/* HEADER & QUICK CTA */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Brand Dashboard</h1>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Manage campaigns, evaluate creator applications, and track ROI.</p>
+            <h1 className="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white">Brand Dashboard</h1>
+            <p className="text-stone-500 dark:text-stone-400 text-xs">Manage campaign requirements, review creator applications, and launch GRWM collabs.</p>
           </div>
           <Link
             to="/brand/campaigns/new"
-            className="bg-[#6C63FF] hover:bg-[#5A52E0] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md shadow-purple-500/20 flex items-center gap-2"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2.5 rounded-xl font-bold text-xs transition-all shadow-xs flex items-center gap-1.5"
           >
-            <PlusCircle size={18} /> Create New Campaign
+            <PlusCircle size={16} /> Post New Campaign Requirement
           </Link>
         </div>
 
         {/* METRICS OVERVIEW */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="card-creator p-6 space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Campaigns</span>
-              <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C63FF] flex items-center justify-center">
-                <Megaphone size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Active Campaigns</span>
+              <div className="w-8 h-8 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-orange-600 flex items-center justify-center border border-orange-200 dark:border-orange-800">
+                <Megaphone size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{stats.activeCampaigns}</p>
-            <p className="text-xs text-slate-400">Total: {stats.totalCampaigns} campaigns</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">{stats.activeCampaigns}</p>
+            <p className="text-[11px] text-stone-400">Total: {stats.totalCampaigns} campaigns</p>
           </div>
 
-          <div className="card-creator p-6 space-y-2">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Applications</span>
-              <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 flex items-center justify-center">
-                <Users size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Total Applications</span>
+              <div className="w-8 h-8 rounded-lg bg-teal-50 dark:bg-teal-950/50 text-teal-600 flex items-center justify-center border border-teal-200 dark:border-teal-800">
+                <Users size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{stats.totalApplications}</p>
-            <p className="text-xs text-slate-400">From verified creators</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">{stats.totalApplications}</p>
+            <p className="text-[11px] text-stone-400">Gen Z creators applied</p>
           </div>
 
-          <div className="card-creator p-6 space-y-2">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Selected Creators</span>
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 flex items-center justify-center">
-                <CheckCircle2 size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Accepted Creators</span>
+              <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 flex items-center justify-center border border-emerald-200 dark:border-emerald-800">
+                <CheckCircle2 size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{stats.selectedInfluencers}</p>
-            <p className="text-xs text-emerald-600 font-semibold">Active Collaborations</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">{stats.selectedInfluencers}</p>
+            <p className="text-[11px] text-teal-600 dark:text-teal-400 font-semibold">Active Collabs</p>
           </div>
 
-          <div className="card-creator p-6 space-y-2">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Budget Allocated</span>
-              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 flex items-center justify-center">
-                <DollarSign size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Total Budget</span>
+              <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/50 text-amber-600 flex items-center justify-center border border-amber-200 dark:border-amber-800">
+                <DollarSign size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">
+            <p className="text-2xl font-black text-stone-900 dark:text-white">
               ${campaigns.reduce((sum, c) => sum + (c.budget || 0), 0).toLocaleString()}
             </p>
-            <p className="text-xs text-slate-400">Across active sponsorships</p>
+            <p className="text-[11px] text-stone-400">Sunscreen & GenZ collabs</p>
           </div>
         </div>
 
@@ -148,81 +147,76 @@ export default function BrandDashboard() {
         <div className="card-creator p-6 space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Campaign Applications & Demand</h3>
-              <p className="text-xs text-slate-500">Applicant interest per active campaign</p>
+              <h3 className="text-base font-bold text-stone-900 dark:text-white">Campaign Applications & Demand</h3>
+              <p className="text-xs text-stone-500">Applicant proposals received per campaign</p>
             </div>
-            <TrendingUp size={20} className="text-[#6C63FF]" />
+            <TrendingUp size={18} className="text-orange-600" />
           </div>
 
-          <div className="h-64 w-full pt-4">
+          <div className="h-56 w-full pt-2">
             {analyticsChartData.length > 0 ? (
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={analyticsChartData}>
                   <CartesianGrid strokeDasharray="3 3" opacity={0.1} />
-                  <XAxis dataKey="name" stroke="#94A3B8" fontSize={12} />
-                  <YAxis stroke="#94A3B8" fontSize={12} />
-                  <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }} />
-                  <Bar dataKey="applications" fill="#6C63FF" radius={[6, 6, 0, 0]} name="Applicants" />
+                  <XAxis dataKey="name" stroke="#A8A29E" fontSize={11} />
+                  <YAxis stroke="#A8A29E" fontSize={11} />
+                  <Tooltip contentStyle={{ borderRadius: '12px', border: '1px solid #E7E5E4', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }} />
+                  <Bar dataKey="applications" fill="#EA580C" radius={[4, 4, 0, 0]} name="Applications" />
                 </BarChart>
               </ResponsiveContainer>
             ) : (
-              <p className="text-center text-slate-400 py-12 text-sm">No campaign data available yet</p>
+              <p className="text-center text-stone-400 py-12 text-xs">No active campaign data available</p>
             )}
           </div>
         </div>
 
-        {/* ACTIVE CAMPAIGN LIST */}
+        {/* ACTIVE CAMPAIGNS GRID */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white">Your Campaigns</h3>
-            <Link to="/brand/campaigns" className="text-xs font-bold text-[#6C63FF] hover:underline flex items-center gap-1">
+            <h3 className="text-lg font-bold text-stone-900 dark:text-white">Your Campaign Requirements</h3>
+            <Link to="/brand/campaigns" className="text-xs font-bold text-orange-600 hover:underline flex items-center gap-1">
               View All <ArrowRight size={14} />
             </Link>
           </div>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <CardSkeleton />
-              <CardSkeleton />
-            </div>
-          ) : campaigns.length === 0 ? (
+          {campaigns.length === 0 ? (
             <EmptyState
-              title="No campaigns created"
-              description="Create your first marketing campaign to start matching with top social media influencers."
-              actionText="Create Campaign"
+              title="No campaigns posted"
+              description="Post your first sponsorship requirement to match with top creators."
+              actionText="Post Campaign"
               actionLink="/brand/campaigns/new"
             />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {campaigns.map((camp) => (
-                <div key={camp.id} className="card-creator p-6 space-y-4 flex flex-col justify-between">
+                <div key={camp.id} className="card-creator p-5 space-y-3 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <h4 className="font-bold text-base text-slate-900 dark:text-white leading-tight">{camp.title}</h4>
+                      <h4 className="font-bold text-sm text-stone-900 dark:text-white leading-tight">{camp.title}</h4>
                       <StatusBadge status={camp.status} />
                     </div>
-                    <p className="text-xs text-slate-500 line-clamp-2 mb-3">{camp.description}</p>
-                    <div className="flex flex-wrap items-center gap-2 text-xs">
-                      <span className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
-                        📂 {camp.category}
+                    <p className="text-xs text-stone-500 line-clamp-2 mb-2">{camp.description}</p>
+                    <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
+                      <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">
+                        {camp.category}
                       </span>
-                      <span className="px-2.5 py-1 rounded-lg bg-purple-50 dark:bg-purple-950/40 text-[#6C63FF] font-bold">
-                        💰 ${camp.budget}
+                      <span className="px-2 py-0.5 rounded bg-orange-50 dark:bg-orange-950/40 text-orange-700 dark:text-orange-300 font-bold border border-orange-200 dark:border-orange-800">
+                        ${camp.budget}
                       </span>
-                      <span className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
-                        🎯 {camp.preferredPlatform}
+                      <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">
+                        {camp.preferredPlatform}
                       </span>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-500">
+                  <div className="pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-stone-500">
                       👥 {camp.applicationsCount || 0} Applicants
                     </span>
                     <div className="flex items-center gap-2">
                       <Link
                         to={`/brand/campaigns/${camp.id}/applicants`}
-                        className="px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C63FF] hover:bg-[#6C63FF] hover:text-white text-xs font-bold transition-all flex items-center gap-1"
+                        className="px-3 py-1.5 rounded-xl bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-300 hover:bg-orange-600 hover:text-white text-xs font-bold transition-all flex items-center gap-1 border border-orange-200 dark:border-orange-800"
                       >
                         <Eye size={14} /> Applicants
                       </Link>
@@ -237,77 +231,6 @@ export default function BrandDashboard() {
                   </div>
                 </div>
               ))}
-            </div>
-          )}
-        </div>
-
-        {/* RECENT APPLICATIONS TABLE */}
-        <div className="card-creator p-6 space-y-4">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">Recent Applications</h3>
-
-          {recentApplications.length === 0 ? (
-            <p className="text-xs text-slate-400 py-4">No recent creator applications</p>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead>
-                  <tr className="border-b border-slate-100 dark:border-slate-800 text-slate-400 text-xs uppercase">
-                    <th className="py-3 px-4">Creator</th>
-                    <th className="py-3 px-4">Match Score</th>
-                    <th className="py-3 px-4">Proposed Rate</th>
-                    <th className="py-3 px-4">Status</th>
-                    <th className="py-3 px-4 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                  {recentApplications.map((app) => (
-                    <tr key={app.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
-                      <td className="py-3 px-4">
-                        <div className="flex items-center gap-3">
-                          <img src={app.influencerAvatar} alt={app.influencerName} className="w-8 h-8 rounded-full object-cover" />
-                          <div>
-                            <p className="font-bold text-slate-900 dark:text-white text-xs">{app.influencerName}</p>
-                            <p className="text-[11px] text-slate-400">{app.influencerHandle}</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="py-3 px-4">
-                        <MatchBadge score={app.matchScore || 90} />
-                      </td>
-                      <td className="py-3 px-4 font-bold text-slate-900 dark:text-white">
-                        ${app.proposedRate}
-                      </td>
-                      <td className="py-3 px-4">
-                        <StatusBadge status={app.status} />
-                      </td>
-                      <td className="py-3 px-4 text-right space-x-2">
-                        {app.status === 'pending' && (
-                          <>
-                            <button
-                              onClick={() => handleUpdateApplicantStatus(app.id, 'accepted')}
-                              className="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-colors"
-                            >
-                              Accept
-                            </button>
-                            <button
-                              onClick={() => handleUpdateApplicantStatus(app.id, 'shortlist')}
-                              className="px-2.5 py-1 rounded-lg bg-purple-100 text-[#6C63FF] text-xs font-bold hover:bg-purple-200 transition-colors"
-                            >
-                              Shortlist
-                            </button>
-                            <button
-                              onClick={() => handleUpdateApplicantStatus(app.id, 'rejected')}
-                              className="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-700 text-xs font-bold hover:bg-rose-200 transition-colors"
-                            >
-                              Reject
-                            </button>
-                          </>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
           )}
         </div>

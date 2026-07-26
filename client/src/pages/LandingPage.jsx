@@ -4,10 +4,8 @@ import {
   Search,
   ArrowRight,
   Sun,
-  CheckCircle2,
-  Users,
   Sparkles,
-  MessageSquare
+  CheckCircle2
 } from 'lucide-react';
 import { VerificationBadge, MatchBadge } from '../components/common/Badge';
 
@@ -24,33 +22,33 @@ export default function LandingPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
       {/* HEADER HERO */}
       <div className="text-center space-y-4">
-        <span className="inline-block text-xs font-semibold px-3 py-1 bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 rounded-full border border-indigo-200 dark:border-indigo-800">
-          Beta v1.0 • College Project Demo
+        <span className="inline-block text-xs font-bold px-3.5 py-1 bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-300 rounded-full border border-orange-200 dark:border-orange-800 shadow-xs">
+          Beta v1.0 • GenZ Collab Demo
         </span>
 
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight max-w-2xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-black text-stone-900 dark:text-white tracking-tight leading-tight max-w-2xl mx-auto">
           Post your requirement. <br />
-          Find creators with the right audience.
+          Match <span className="text-gradient-sunset">Gen Z Creators</span> fast.
         </h1>
 
-        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-stone-600 dark:text-stone-300 max-w-xl mx-auto leading-relaxed">
           Example: Brand posts a requirement for an SPF 50 Sunscreen launch targeting Gen Z on TikTok — and gets matched with creators whose audience actually matches.
         </p>
 
         {/* SEARCH BAR */}
         <form onSubmit={handleSearch} className="max-w-md mx-auto pt-2">
           <div className="card-creator p-1.5 flex items-center gap-2 shadow-xs">
-            <Search size={16} className="text-slate-400 ml-3 shrink-0" />
+            <Search size={16} className="text-stone-400 ml-3 shrink-0" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search sunscreen, Gen Z GRWM, TikTok..."
-              className="w-full bg-transparent border-none text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none py-1.5"
+              className="w-full bg-transparent border-none text-xs sm:text-sm text-stone-900 dark:text-white focus:outline-none py-1.5"
             />
             <button
               type="submit"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl font-bold text-xs transition-all shrink-0"
+              className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-xl font-bold text-xs transition-all shrink-0"
             >
               Search
             </button>
@@ -60,13 +58,13 @@ export default function LandingPage() {
         <div className="flex items-center justify-center gap-3 pt-2">
           <Link
             to="/signup?role=brand"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-xs"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-xs"
           >
             Post Campaign Requirement
           </Link>
           <Link
             to="/signup?role=influencer"
-            className="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 px-5 py-2.5 rounded-xl font-bold text-xs border border-slate-200 dark:border-slate-700"
+            className="bg-stone-100 dark:bg-stone-800 text-stone-900 dark:text-white hover:bg-stone-200 dark:hover:bg-stone-700 px-5 py-2.5 rounded-xl font-bold text-xs border border-stone-200 dark:border-stone-700"
           >
             Apply as Creator
           </Link>
@@ -74,16 +72,16 @@ export default function LandingPage() {
       </div>
 
       {/* CORE SHOWCASE: SUNSCREEN GENZ CAMPAIGN */}
-      <div className="card-creator p-6 sm:p-8 space-y-6">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 dark:border-slate-800">
+      <div className="card-creator p-6 sm:p-8 space-y-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-stone-100 dark:border-stone-800">
           <div>
-            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-700 bg-amber-50 dark:bg-amber-950/50 px-2.5 py-0.5 rounded-md mb-1.5">
-              <Sun size={12} /> Live Collab Demo Case
+            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-amber-50 dark:bg-amber-950/50 dark:text-amber-300 px-2.5 py-0.5 rounded-md mb-1.5 border border-amber-200 dark:border-amber-800">
+              <Sun size={12} className="text-amber-500" /> Featured Collab Demo Case
             </span>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+            <h2 className="text-xl font-extrabold text-stone-900 dark:text-white">
               Aura SPF 50 Daily Sunscreen Gen Z TikTok Launch
             </h2>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-stone-500 mt-0.5">
               Requirement: Brand wants a Gen Z creator (18-24 audience) for a non-greasy SPF 50 sunscreen GRWM TikTok review.
             </p>
           </div>
@@ -93,20 +91,20 @@ export default function LandingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* BRAND REQUIREMENT ITEM */}
           <div className="space-y-3">
-            <div className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
+            <div className="relative rounded-xl overflow-hidden border border-stone-200 dark:border-stone-700">
               <img
                 src="/sunscreen-campaign.png"
                 alt="Aura Sunscreen Product"
                 className="w-full h-48 object-cover"
               />
-              <div className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-slate-900/90 to-transparent text-white">
+              <div className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-stone-900/90 to-transparent text-white">
                 <p className="text-xs font-bold">Aura Skincare • SPF 50 Hydrating Sunscreen</p>
-                <p className="text-[11px] text-slate-300">Budget: $1,800 • Platform: TikTok</p>
+                <p className="text-[11px] text-stone-300">Budget: $1,800 • Platform: TikTok</p>
               </div>
             </div>
-            <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs space-y-1">
-              <p className="font-semibold text-slate-900 dark:text-white">Deliverables Required:</p>
-              <ul className="list-disc list-inside text-slate-600 dark:text-slate-300 space-y-0.5 text-[11px]">
+            <div className="p-3 bg-stone-50 dark:bg-stone-800/60 rounded-xl text-xs space-y-1">
+              <p className="font-semibold text-stone-900 dark:text-white">Deliverables Required:</p>
+              <ul className="list-disc list-inside text-stone-600 dark:text-stone-300 space-y-0.5 text-[11px]">
                 <li>1 TikTok GRWM video (30-60s) showing sunscreen application</li>
                 <li>2 Instagram Stories with product swipe-up link</li>
               </ul>
@@ -115,32 +113,32 @@ export default function LandingPage() {
 
           {/* MATCHED CREATOR CARD */}
           <div className="space-y-3">
-            <div className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
+            <div className="relative rounded-xl overflow-hidden border border-stone-200 dark:border-stone-700">
               <img
                 src="/genz-creator.png"
                 alt="Gen Z Creator Mia Chen"
                 className="w-full h-48 object-cover"
               />
-              <div className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-slate-900/90 to-transparent text-white">
+              <div className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-stone-900/90 to-transparent text-white">
                 <div className="flex items-center gap-1">
                   <p className="text-xs font-bold">Mia Chen (@miaglows)</p>
                   <VerificationBadge size={14} />
                 </div>
-                <p className="text-[11px] text-slate-300">320k TikTok Followers • 88% Gen Z Audience</p>
+                <p className="text-[11px] text-stone-300">320k TikTok Followers • 88% Gen Z Audience</p>
               </div>
             </div>
-            <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl text-xs space-y-2">
+            <div className="p-3 bg-stone-50 dark:bg-stone-800/60 rounded-xl text-xs space-y-2">
               <div className="flex justify-between">
-                <span className="text-slate-500">Proposed Rate:</span>
-                <span className="font-bold text-slate-900 dark:text-white">$1,800</span>
+                <span className="text-stone-500">Proposed Rate:</span>
+                <span className="font-bold text-stone-900 dark:text-white">$1,800</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Status:</span>
-                <span className="font-bold text-emerald-600">Accepted & Address Exchanged</span>
+                <span className="text-stone-500">Status:</span>
+                <span className="font-bold text-teal-600 dark:text-teal-400">Accepted & Address Exchanged</span>
               </div>
               <Link
                 to="/campaigns/camp_sunscreen_1"
-                className="block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-xl text-xs font-bold transition-all"
+                className="block text-center bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-xl text-xs font-bold transition-all"
               >
                 View Campaign Details & Proposal
               </Link>
@@ -152,25 +150,25 @@ export default function LandingPage() {
       {/* SIMPLE 3-STEP EXPLANATION */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="card-creator p-5 space-y-2 text-left">
-          <span className="w-7 h-7 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 font-bold text-xs flex items-center justify-center">1</span>
-          <h3 className="font-bold text-sm text-slate-900 dark:text-white">Brand Posts Requirement</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <span className="w-7 h-7 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-orange-600 font-bold text-xs flex items-center justify-center border border-orange-200 dark:border-orange-800">1</span>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-white">Brand Posts Requirement</h3>
+          <p className="text-xs text-stone-500 leading-relaxed">
             Specify your product (e.g., SPF 50 sunscreen), target audience (Gen Z), and deliverables budget.
           </p>
         </div>
 
         <div className="card-creator p-5 space-y-2 text-left">
-          <span className="w-7 h-7 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 font-bold text-xs flex items-center justify-center">2</span>
-          <h3 className="font-bold text-sm text-slate-900 dark:text-white">Audience Match</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <span className="w-7 h-7 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-orange-600 font-bold text-xs flex items-center justify-center border border-orange-200 dark:border-orange-800">2</span>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-white">Audience Match</h3>
+          <p className="text-xs text-stone-500 leading-relaxed">
             Matching engine highlights creators with verified Gen Z audience demographics (e.g., 88% Gen Z ratio).
           </p>
         </div>
 
         <div className="card-creator p-5 space-y-2 text-left">
-          <span className="w-7 h-7 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 font-bold text-xs flex items-center justify-center">3</span>
-          <h3 className="font-bold text-sm text-slate-900 dark:text-white">Direct Chat & Collab</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <span className="w-7 h-7 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-orange-600 font-bold text-xs flex items-center justify-center border border-orange-200 dark:border-orange-800">3</span>
+          <h3 className="font-bold text-sm text-stone-900 dark:text-white">Direct Chat & Collab</h3>
+          <p className="text-xs text-stone-500 leading-relaxed">
             Accept proposals, exchange shipping address for sunscreen samples, and chat directly in app.
           </p>
         </div>

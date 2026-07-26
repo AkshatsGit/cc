@@ -12,9 +12,7 @@ import {
   Briefcase,
   Bookmark,
   MessageSquare,
-  ArrowRight,
-  TrendingUp,
-  SlidersHorizontal
+  ArrowRight
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -64,196 +62,119 @@ export default function InfluencerDashboard() {
         {/* HEADER */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Creator Dashboard</h1>
-            <p className="text-slate-500 dark:text-slate-400 text-sm">Discover high-converting brand campaigns tailored to your niche & reach.</p>
+            <h1 className="text-2xl sm:text-3xl font-black text-stone-900 dark:text-white">Creator Dashboard</h1>
+            <p className="text-stone-500 dark:text-stone-400 text-xs">Discover brand campaigns matching your audience reach & Gen Z ratio.</p>
           </div>
           <Link
             to="/campaigns"
-            className="bg-[#6C63FF] hover:bg-[#5A52E0] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md shadow-purple-500/20 flex items-center gap-2"
+            className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2.5 rounded-xl font-bold text-xs transition-all shadow-xs flex items-center gap-1.5"
           >
-            <Sparkles size={18} /> Explore All Opportunities
+            <Sparkles size={16} /> Explore All Opportunities
           </Link>
         </div>
 
         {/* STATS OVERVIEW */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="card-creator p-6 space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Recommended Opportunities</span>
-              <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C63FF] flex items-center justify-center">
-                <Sparkles size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Recommended Collabs</span>
+              <div className="w-8 h-8 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-orange-600 flex items-center justify-center border border-orange-200 dark:border-orange-800">
+                <Sparkles size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{stats.recommendedCount}</p>
-            <p className="text-xs text-[#6C63FF] font-semibold">Matched by AI Niche Score</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">{stats.recommendedCount}</p>
+            <p className="text-[11px] text-orange-600 font-semibold">Matched by Audience Ratio</p>
           </div>
 
-          <div className="card-creator p-6 space-y-2">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Applied Campaigns</span>
-              <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 flex items-center justify-center">
-                <Briefcase size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Applied Campaigns</span>
+              <div className="w-8 h-8 rounded-lg bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 flex items-center justify-center border border-stone-200 dark:border-stone-700">
+                <Briefcase size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{stats.appliedCount}</p>
-            <p className="text-xs text-slate-400">Proposals submitted</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">{stats.appliedCount}</p>
+            <p className="text-[11px] text-stone-400">Proposals submitted</p>
           </div>
 
-          <div className="card-creator p-6 space-y-2">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Collaborations</span>
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 flex items-center justify-center">
-                <CheckCircle2 size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Active Collabs</span>
+              <div className="w-8 h-8 rounded-lg bg-teal-50 dark:bg-teal-950/50 text-teal-600 flex items-center justify-center border border-teal-200 dark:border-teal-800">
+                <CheckCircle2 size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">{stats.activeCollabsCount}</p>
-            <p className="text-xs text-emerald-600 font-semibold">Accepted Brand Collabs</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">{stats.activeCollabsCount}</p>
+            <p className="text-[11px] text-teal-600 dark:text-teal-400 font-semibold">Accepted Collabs</p>
           </div>
 
-          <div className="card-creator p-6 space-y-2">
+          <div className="card-creator p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Estimated Earnings</span>
-              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 flex items-center justify-center">
-                <DollarSign size={20} />
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider">Earnings</span>
+              <div className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/50 text-amber-600 flex items-center justify-center border border-amber-200 dark:border-amber-800">
+                <DollarSign size={16} />
               </div>
             </div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">${stats.totalEarnings.toLocaleString()}</p>
-            <p className="text-xs text-slate-400">From accepted contracts</p>
+            <p className="text-2xl font-black text-stone-900 dark:text-white">${stats.totalEarnings.toLocaleString()}</p>
+            <p className="text-[11px] text-stone-400">From accepted contracts</p>
           </div>
         </div>
 
-        {/* AI RECOMMENDED CAMPAIGN FEED */}
+        {/* RECOMMENDED OPPORTUNITIES GRID */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-[#6C63FF] flex items-center justify-center">
-                <Sparkles size={18} />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">AI Recommended Campaigns</h3>
-                <p className="text-xs text-slate-400">Ranked by your niche, reach, platform & rate fit</p>
-              </div>
-            </div>
-            <Link to="/campaigns" className="text-xs font-bold text-[#6C63FF] hover:underline flex items-center gap-1">
-              View All Opportunities <ArrowRight size={14} />
+            <h3 className="text-lg font-bold text-stone-900 dark:text-white">Recommended Opportunities</h3>
+            <Link to="/campaigns" className="text-xs font-bold text-orange-600 hover:underline flex items-center gap-1">
+              Explore All <ArrowRight size={14} />
             </Link>
           </div>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <CardSkeleton />
-              <CardSkeleton />
-            </div>
-          ) : recommendedCampaigns.length === 0 ? (
-            <EmptyState
-              title="No recommendations found"
-              description="Explore all open brand campaigns and update your profile niche settings."
-              actionText="Browse Campaigns"
-              actionLink="/campaigns"
-            />
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recommendedCampaigns.map((camp) => (
-                <div key={camp.id} className="card-creator p-6 space-y-4 flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <img src={camp.brandLogo} alt={camp.brandName} className="w-8 h-8 rounded-lg object-cover" />
-                        <span className="font-bold text-xs text-slate-700 dark:text-slate-300">{camp.brandName}</span>
-                      </div>
-                      <MatchBadge score={camp.matchScore} reasons={camp.matchReasons} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {recommendedCampaigns.map((camp) => (
+              <div key={camp.id} className="card-creator p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <img src={camp.brandLogo} alt={camp.brandName} className="w-7 h-7 rounded-lg object-cover" />
+                      <span className="font-bold text-xs text-stone-800 dark:text-stone-200">{camp.brandName}</span>
                     </div>
-
-                    <h4 className="font-bold text-base text-slate-900 dark:text-white line-clamp-1">{camp.title}</h4>
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{camp.description}</p>
-
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      <span className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-semibold">
-                        📂 {camp.category}
-                      </span>
-                      <span className="px-2.5 py-1 rounded-lg bg-purple-50 dark:bg-purple-950/40 text-[#6C63FF] text-[11px] font-bold">
-                        💰 ${camp.budget}
-                      </span>
-                      <span className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-semibold">
-                        🎯 {camp.preferredPlatform}
-                      </span>
-                    </div>
+                    <MatchBadge score={camp.matchScore} reasons={camp.matchReasons} />
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-                    <button
-                      onClick={() => handleBookmarkToggle(camp.id)}
-                      className="p-2 rounded-xl text-slate-400 hover:text-[#6C63FF] hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                      title="Save campaign"
-                    >
-                      <Bookmark size={18} />
-                    </button>
+                  <h4 className="font-bold text-sm text-stone-900 dark:text-white line-clamp-1">{camp.title}</h4>
+                  <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed">{camp.description}</p>
 
-                    <Link
-                      to={`/campaigns/${camp.id}`}
-                      className="flex-1 text-center bg-[#6C63FF] hover:bg-[#5A52E0] text-white py-2 rounded-xl text-xs font-bold transition-all shadow-md shadow-purple-500/20"
-                    >
-                      {camp.hasApplied ? 'View Status' : 'Apply Now'}
-                    </Link>
+                  <div className="flex flex-wrap gap-1.5 pt-1 text-[11px]">
+                    <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">
+                      {camp.category}
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-orange-50 dark:bg-orange-950/40 text-orange-700 dark:text-orange-300 font-bold border border-orange-200 dark:border-orange-800">
+                      ${camp.budget}
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-medium">
+                      {camp.preferredPlatform}
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
 
-        {/* ACTIVE COLLABORATIONS & APPLIED TRACKER */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Active Collaborations */}
-          <div className="card-creator p-6 space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Active Collaborations</h3>
-              <Link to="/messages" className="text-xs font-bold text-[#6C63FF] hover:underline flex items-center gap-1">
-                Open Chat <MessageSquare size={14} />
-              </Link>
-            </div>
+                <div className="pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between gap-2">
+                  <button
+                    onClick={() => handleBookmarkToggle(camp.id)}
+                    className="p-1.5 rounded-lg text-stone-400 hover:text-orange-600 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
+                    title="Save campaign"
+                  >
+                    <Bookmark size={16} />
+                  </button>
 
-            {activeCollaborations.length === 0 ? (
-              <p className="text-xs text-slate-400 py-6 text-center">No active brand collaborations yet</p>
-            ) : (
-              <div className="space-y-3">
-                {activeCollaborations.map((app) => (
-                  <div key={app.id} className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl flex items-center justify-between gap-3">
-                    <div>
-                      <p className="font-bold text-slate-900 dark:text-white text-xs">Accepted Sponsorship</p>
-                      <p className="text-[11px] text-slate-500">Rate: ${app.proposedRate}</p>
-                    </div>
-                    <Link
-                      to="/messages"
-                      className="px-3 py-1.5 rounded-lg bg-[#6C63FF] text-white text-xs font-bold flex items-center gap-1 shadow-sm"
-                    >
-                      <MessageSquare size={14} /> Chat Brand
-                    </Link>
-                  </div>
-                ))}
+                  <Link
+                    to={`/campaigns/${camp.id}`}
+                    className="flex-1 text-center bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-xl text-xs font-bold transition-all shadow-xs"
+                  >
+                    {camp.hasApplied ? 'View Status' : 'View & Apply'}
+                  </Link>
+                </div>
               </div>
-            )}
-          </div>
-
-          {/* Applied Campaigns Status Tracker */}
-          <div className="card-creator p-6 space-y-4">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">Applied Campaigns</h3>
-
-            {myApplications.length === 0 ? (
-              <p className="text-xs text-slate-400 py-6 text-center">You haven't applied to any campaigns yet</p>
-            ) : (
-              <div className="space-y-3">
-                {myApplications.map((app) => (
-                  <div key={app.id} className="p-3 border border-slate-100 dark:border-slate-800 rounded-xl flex items-center justify-between gap-3">
-                    <div className="space-y-0.5">
-                      <p className="font-bold text-slate-900 dark:text-white text-xs">Campaign ID: {app.campaignId}</p>
-                      <p className="text-[11px] text-slate-400">Proposed Rate: ${app.proposedRate}</p>
-                    </div>
-                    <StatusBadge status={app.status} />
-                  </div>
-                ))}
-              </div>
-            )}
+            ))}
           </div>
         </div>
       </main>
