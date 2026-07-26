@@ -7,18 +7,18 @@ const AuthContext = createContext();
 export const DEMO_USERS = {
   brand: {
     id: 'user_brand_1',
-    email: 'collabs@techpulse.com',
-    name: 'TechPulse Gear',
+    email: 'collabs@auraskincare.com',
+    name: 'AURA Skincare',
     role: 'brand',
-    avatar: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80',
+    avatar: '/sunscreen-campaign.png',
     verified: true
   },
   influencer: {
     id: 'user_influencer_1',
-    email: 'alex.tech@creators.com',
-    name: 'Alex Rivera',
+    email: 'mia@creators.com',
+    name: 'Mia Chen',
     role: 'influencer',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    avatar: '/genz-creator.png',
     verified: true
   },
   admin: {
@@ -34,7 +34,7 @@ export const DEMO_USERS = {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem('creatorcart_user');
-    return saved ? JSON.parse(saved) : DEMO_USERS.brand; // Default demo account for instant exploration
+    return saved ? JSON.parse(saved) : DEMO_USERS.brand;
   });
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -101,7 +101,7 @@ export const AuthProvider = ({ children }) => {
     const demoUser = DEMO_USERS[roleKey];
     if (demoUser) {
       setUser(demoUser);
-      toast.success(`Switched to Demo ${roleKey.toUpperCase()} mode (${demoUser.name})`);
+      toast.success(`Switched to ${roleKey.toUpperCase()} Mode (${demoUser.name})`);
     }
   };
 
