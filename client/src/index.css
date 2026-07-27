@@ -2,47 +2,33 @@
 
 @layer base {
   :root {
-    --primary: #EA580C;
-    --primary-hover: #C2410C;
-    --primary-light: #FFF7ED;
-    --accent-teal: #0D9488;
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --primary-light: #1E3A8A;
+    --accent-blue: #3B82F6;
   }
 }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #FAFAF9;
-  color: #1C1917;
+  background-color: #0F172A;
+  color: #F8FAFC;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.dark body {
-  background-color: #0C0A09;
-  color: #FAFAF9;
-}
-
-/* Warm Stone Card Design System */
+/* Dark Slate Card Design System replacing white background */
 .card-creator {
   border-radius: 16px;
-  background-color: #FFFFFF;
-  border: 1px solid #E7E5E4;
-  box-shadow: 0 1px 3px 0 rgba(28, 25, 23, 0.04);
+  background-color: #1E293B;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  color: #F8FAFC;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.dark .card-creator {
-  background-color: #1C1917;
-  border-color: #292524;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.4);
-}
-
 .card-creator:hover {
-  border-color: #F97316;
-  box-shadow: 0 4px 16px -2px rgba(234, 88, 12, 0.08);
-}
-
-.dark .card-creator:hover {
-  border-color: #EA580C;
+  border-color: #3B82F6;
+  box-shadow: 0 6px 24px -2px rgba(59, 130, 246, 0.2);
 }
 
 /* Custom scrollbars */
@@ -54,20 +40,17 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6D3D1;
+  background: #334155;
   border-radius: 999px;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #44403C;
-}
 
-/* Text Gradient Utility for Sunset Warmth */
-.text-gradient-sunset {
-  background: linear-gradient(135deg, #EA580C 0%, #D97706 50%, #E11D48 100%);
+/* Royal Blue Gradient Utility */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.bg-gradient-sunset {
-  background: linear-gradient(135deg, #EA580C 0%, #F97316 100%);
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
 }

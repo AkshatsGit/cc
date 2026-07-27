@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
   LayoutDashboard,
-  Megaphone,
   Users,
   MessageSquare,
   Settings,
@@ -39,16 +38,16 @@ export default function Sidebar() {
   const items = role === 'influencer' ? influencerNav : brandNav;
 
   return (
-    <aside className="w-56 shrink-0 hidden lg:block bg-white dark:bg-stone-900 border-r border-stone-200 dark:border-stone-800 min-h-[calc(100vh-4rem)] p-4 transition-colors">
-      <div className="mb-6 px-3 py-2.5 bg-stone-50 dark:bg-stone-800/60 rounded-xl border border-stone-200 dark:border-stone-700 flex items-center gap-3">
+    <aside className="w-56 shrink-0 hidden lg:block bg-[#0F172A] border-r border-slate-800 min-h-[calc(100vh-4rem)] p-4 transition-colors">
+      <div className="mb-6 px-3 py-2.5 bg-slate-800/80 rounded-xl border border-slate-700 flex items-center gap-3">
         <img
           src={user.avatar}
           alt={user.name}
-          className="w-8 h-8 rounded-full object-cover ring-1 ring-orange-500"
+          className="w-8 h-8 rounded-full object-cover ring-1 ring-blue-500"
         />
         <div className="overflow-hidden">
-          <p className="font-bold text-xs text-stone-900 dark:text-white truncate">{user.name}</p>
-          <span className="text-[10px] font-semibold text-orange-600 uppercase tracking-wider">
+          <p className="font-bold text-xs text-white truncate">{user.name}</p>
+          <span className="text-[10px] font-semibold text-blue-400 uppercase tracking-wider">
             {role}
           </span>
         </div>
@@ -65,8 +64,8 @@ export default function Sidebar() {
               to={item.path}
               className={`flex items-center gap-2.5 px-3 py-2 rounded-xl font-semibold text-xs transition-all ${
                 isActive
-                  ? 'bg-orange-600 text-white shadow-xs'
-                  : 'text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 hover:text-stone-900 dark:hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-300 hover:bg-slate-800 hover:text-white'
               }`}
             >
               <Icon size={16} />
